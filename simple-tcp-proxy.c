@@ -149,7 +149,8 @@ get_hinfo_from_sockaddr(struct sockaddr_in addr, int len, char *fqdn)
 int
 wait_for_connection(int s)
 {
-    static int newsock, len;
+    static int newsock;
+    static socklen_t len;
     static struct sockaddr_in peer;
 
     len = sizeof(struct sockaddr);
